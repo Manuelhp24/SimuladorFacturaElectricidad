@@ -2,10 +2,15 @@
 function consumoMensual() {
   return parseFloat(prompt("Ingrese el consumo en kWh (ej: 410):")) || 410;
 }
+
+let retornoConsumo = consumoMensual()
+
+console.log(retornoConsumo);
 // 2. Función declarativa - Tarifa base por kWh
 function tarifaBase() {
   return parseFloat(prompt("Ingrese la tarifa por kWh (ej: 620):")) || 620;
 }
+let retornoCargoFijo = tarifaBase()
 // 3. Función de expresión - Cargo fijo
 const cargoFijo = function() {
   const cargoFijo = 3500;
@@ -17,7 +22,7 @@ const ivaPorcentaje = function() {
 };
 // 5. Función flecha - Subtotal
 const calcularSubtotal = () => {
-  return  consumoMensual() * tarifaBase()
+  return  retornoConsumo * retornoCargoFijo
 }
 // 6. Función flecha - Valor del IVA
 const calcularIva = () => {
@@ -33,8 +38,8 @@ function generarFactura() {
 
   -------FACTURA DE ENERGÍA ELÉCTRICA-------
 
-  ==> Consumo: ${consumoMensual()} kWh
-  ==> Tarifa: $${tarifaBase()}/kWh
+  ==> Consumo: ${retornoConsumo} kWh
+  ==> Tarifa: $${retornoCargoFijo}/kWh
   ==> Subtotal: $${calcularSubtotal().toLocaleString()}
   ==> IVA (${ivaPorcentaje()}%): $${calcularIva().toLocaleString()}
   ==> Cargo fijo: $${cargoFijo().toLocaleString()}\n
