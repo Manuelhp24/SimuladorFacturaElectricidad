@@ -4,5 +4,14 @@ function consumoMensual() {
 }
 // 2. Función declarativa - Tarifa base por kWh
 function tarifaBase() {
-  return parseFloat(prompt("Ingrese la tarifa por kWh (ej: 620):"));
+  return parseFloat(prompt("Ingrese la tarifa por kWh (ej: 620):")) || 620;
 }
+// 3. Función de expresión - Cargo fijo
+const cargoFijo = function() {
+  const cargoFijo = 3500;
+  return cargoFijo;
+};
+// 4. Función de expresión - IVA (%)
+const ivaPorcentaje = function() {
+  return 19; // IVA fijo del 19%
+};
