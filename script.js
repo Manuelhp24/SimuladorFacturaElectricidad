@@ -27,3 +27,24 @@ const calcularIva = () => {
 const calcularTotal = () => {
   return calcularSubtotal() + calcularIva() + cargoFijo();
 }
+// 8. Función final que muestra la factura, función declarativa.
+function generarFactura() {
+  const factura = `
+
+  -------FACTURA DE ENERGÍA ELÉCTRICA-------
+
+  ==> Consumo: ${consumoMensual()} kWh
+  ==> Tarifa: $${tarifaBase()}/kWh
+  ==> Subtotal: $${calcularSubtotal().toLocaleString()}
+  ==> IVA (${ivaPorcentaje()}%): $${calcularIva().toLocaleString()}
+  ==> Cargo fijo: $${cargoFijo().toLocaleString()}\n
+  ------------------------------------------------
+  ==> TOTAL: $${calcularTotal().toLocaleString()}
+  `;
+  
+  console.log(factura);
+  alert(factura); // Muestra también en un popup
+}
+
+
+generarFactura();
