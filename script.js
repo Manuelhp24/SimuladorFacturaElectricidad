@@ -19,3 +19,7 @@ const ivaPorcentaje = function() {
 const calcularSubtotal = () => {
   return  consumoMensual() * tarifaBase()
 }
+// 6. Función flecha - Valor del IVA
+const calcularIva = () => {
+  return (calcularSubtotal() * ivaPorcentaje()) / 100;
+}
