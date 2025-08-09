@@ -15,3 +15,7 @@ const cargoFijo = function() {
 const ivaPorcentaje = function() {
   return 19; // IVA fijo del 19%
 };
+// 5. Función flecha - Subtotal
+const calcularSubtotal = () => {
+  return  consumoMensual() * tarifaBase()
+}
